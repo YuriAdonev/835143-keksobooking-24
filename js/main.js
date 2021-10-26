@@ -1,4 +1,8 @@
 const getRandomNumber = (from, to) => {
+  if (from < 0 || to < 0) {
+    return;
+  }
+
   if (from === to) {
     return from;
   }
@@ -11,6 +15,10 @@ const getRandomNumber = (from, to) => {
 };
 
 const getRandomFloatNumber = (from, to, decimalPlacesCount) => {
+  if (from < 0 || to < 0) {
+    return;
+  }
+
   let multiplier = 10;
   multiplier **= decimalPlacesCount;
   return getRandomNumber(from * multiplier, to * multiplier) / multiplier;
